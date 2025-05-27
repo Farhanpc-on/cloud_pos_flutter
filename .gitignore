@@ -1,7 +1,15 @@
-# Flutter & Dart ignores
+# Flutter/Dart
 build/
 .dart_tool/
 .packages
-.idea/
 .flutter-plugins
+.flutter-plugins-dependencies
+Generated.xcconfig
+
+# IDEs
+.idea/
 *.iml
+
+# Mac/Windows
+.DS_Store
+Thumbs.db
