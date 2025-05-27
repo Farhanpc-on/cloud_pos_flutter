@@ -1,0 +1,39 @@
+pluginManagement {
+    // Define flutterSdkPath. It's needed by includeBuild within this block,
+    // and pluginManagement must be the first statement in settings.gradle.
+    def flutterSdkPath = {
+        def properties = new Properties()
+        // Use settingsDir to be explicit about the location of local.properties relative to settings.gradle
+        def localPropertiesFile = new File(settingsDir, "local.properties")
+        if (localPropertiesFile.exists()) {
+            localPropertiesFile.withReader("UTF-8") { reader ->
+                properties.load(reader)
+            }
+        }
+        def sdk = properties.getProperty("flutter.sdk")
+        assert sdk != null, "flutter.sdk not set in local.properties. Please ensure this file exists and contains the SDK path."
+        return sdk
+    }()
+    
+    // Include the Flutter tools Gradle build. This makes the Flutter plugin available.
+    includeBuild "$flutterSdkPath/packages/flutter_tools/gradle"
+    
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+
+    // Define AGP and Kotlin versions here to be the single source of truth for plugins applied in app/build.gradle.
+    // These versions should align with your project's requirements (e.g., AGP 8.2.2 and Kotlin 1.9.22).
+    plugins {
+        id "com.android.application" version "8.2.2" apply false
+        id "org.jetbrains.kotlin.android" version "1.9.22" apply false
+    }
+}
+include ':app'
+
+// The `dev.flutter.flutter-gradle-plugin` is now typically applied
+// directly in the app-level build.gradle's plugins {} block.
+// The `includeBuild` above makes it available.
+// The old `apply from: ".../app_plugin_loader.gradle"` is no longer needed.
