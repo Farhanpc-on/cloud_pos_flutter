@@ -15,7 +15,7 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.32.0'  # Explicitly use the version you have locally
+          flutter-version: '3.22.0'  # Align with pubspec.yaml or use a specific known stable version
 
       - name: Install dependencies
         run: flutter pub get
