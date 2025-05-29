@@ -1,12 +1,14 @@
 buildscript {
-    val kotlin_version by extra("1.9.24") // Or potentially a later 1.9.x version
+    ext.kotlin_version = '1.8.22' // Downgraded for compatibility
+
     repositories {
         google()
         mavenCentral()
     }
+
     dependencies {
-        classpath("com.android.tools.build:gradle:8.4.1")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version")
+        classpath 'com.android.tools.build:gradle:7.4.2' // Downgraded from 8.3.0
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 
@@ -17,17 +19,17 @@ allprojects {
     }
 }
 
-val newBuildDir: Directory = rootProject.layout.buildDirectory.dir("../../build").get()
-rootProject.layout.buildDirectory.value(newBuildDir)
-
+rootProject.buildDir = '../build'
 subprojects {
-    val newSubprojectBuildDir: Directory = newBuildDir.dir(project.name)
-    project.layout.buildDirectory.value(newSubprojectBuildDir)
-}
-subprojects {
-    project.evaluationDependsOn(":app")
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+    project.evaluationDependsOn(':app')
+    project.configurations.all {
+        resolutionStrategy.eachDependency { details ->
+            // Optional: add resolution strategy here if needed
+        }
+    }
 }
 
-tasks.register<Delete>("clean") {
-    delete(rootProject.layout.buildDirectory)
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
 }
