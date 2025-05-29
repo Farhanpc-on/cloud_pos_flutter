@@ -1,4 +1,0 @@
-storePassword=Tech@dm1n123
-keyPassword=Tech@dm1n123
-keyAlias=cloudpos
-storeFile=key.jks

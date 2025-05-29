@@ -1122,22 +1122,20 @@ class _FollowUpFormState extends State<FollowUpForm> {
                               initialDate: initialStartDate,
                               firstDate: DateTime.now().subtract(Duration(days: 366)),
                               lastDate: DateTime.now().add(Duration(days: 3650))); // Increased lastDate range
-                          if (pickedDate != null) {
-                            TimeOfDay? pickedTime = await showTimePicker(
-                                context: context,
-                                initialTime: TimeOfDay.fromDateTime(initialStartDate));
-                            if (pickedTime != null) {
-                              final DateTime finalDateTime = DateTime(
-                                  pickedDate.year, pickedDate.month, pickedDate.day,
-                                  pickedTime.hour, pickedTime.minute);
-                              if(mounted) {
-                                setState(() {
-                                  startDateController.text = DateFormat('yyyy-MM-dd hh:mm a').format(finalDateTime);
-                                });
-                              }
+                          TimeOfDay? pickedTime = await showTimePicker(
+                              context: context,
+                              initialTime: TimeOfDay.fromDateTime(initialStartDate));
+                          if (pickedTime != null) {
+                            final DateTime finalDateTime = DateTime(
+                                pickedDate.year, pickedDate.month, pickedDate.day,
+                                pickedTime.hour, pickedTime.minute);
+                            if(mounted) {
+                              setState(() {
+                                startDateController.text = DateFormat('yyyy-MM-dd hh:mm a').format(finalDateTime);
+                              });
                             }
                           }
-                                                },
+                                                                        },
                         validator: (value) {
                           if (value == null || value.isEmpty)
                             return "${AppLocalizations.of(context).translate('start_datetime')} "
@@ -1182,22 +1180,20 @@ class _FollowUpFormState extends State<FollowUpForm> {
                               initialDate: initialEndDate,
                               firstDate: DateTime.now().subtract(Duration(days: 366)),
                               lastDate: DateTime.now().add(Duration(days: 3650))); 
-                          if (pickedDate != null) {
-                            TimeOfDay? pickedTime = await showTimePicker(
-                                context: context,
-                                initialTime: TimeOfDay.fromDateTime(initialEndDate));
-                            if (pickedTime != null) {
-                              final DateTime finalDateTime = DateTime(
-                                  pickedDate.year, pickedDate.month, pickedDate.day,
-                                  pickedTime.hour, pickedTime.minute);
-                              if (mounted) {
-                                setState(() {
-                                  endDateController.text = DateFormat('yyyy-MM-dd hh:mm a').format(finalDateTime);
-                                });
-                              }
+                          TimeOfDay? pickedTime = await showTimePicker(
+                              context: context,
+                              initialTime: TimeOfDay.fromDateTime(initialEndDate));
+                          if (pickedTime != null) {
+                            final DateTime finalDateTime = DateTime(
+                                pickedDate.year, pickedDate.month, pickedDate.day,
+                                pickedTime.hour, pickedTime.minute);
+                            if (mounted) {
+                              setState(() {
+                                endDateController.text = DateFormat('yyyy-MM-dd hh:mm a').format(finalDateTime);
+                              });
                             }
                           }
-                                                },
+                                                                        },
                         validator: (value) {
                           if (value == null || value.isEmpty)
                             return "${AppLocalizations.of(context).translate('end_datetime')} "

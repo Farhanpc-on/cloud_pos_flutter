@@ -97,14 +97,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.3.1"
-  change_app_package_name:
-    dependency: "direct main"
-    description:
-      name: change_app_package_name
-      sha256: "8e43b754fe960426904d77ed4c62fa8c9834deaf6e293ae40963fa447482c4c5"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.5.0"
   characters:
     dependency: transitive
     description:
@@ -261,10 +253,10 @@ packages:
     dependency: transitive
     description:
       name: file_selector_macos
-      sha256: "271ab9986df0c135d45c3cdb6bd0faa5db6f4976d3e4b437cf7d0f258d941bfc"
+      sha256: "8c9250b2bd2d8d4268e39c82543bacbaca0fda7d29e0728c3c4bbb7c820fd711"
       url: "https://pub.dev"
     source: hosted
-    version: "0.9.4+2"
+    version: "0.9.4+3"
   file_selector_platform_interface:
     dependency: transitive
     description:
@@ -397,14 +389,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.2.5"
-  get_ip_address:
-    dependency: "direct main"
-    description:
-      name: get_ip_address
-      sha256: ad7b1ca2b6f03a247a59bc7dd7e170e495b703b01185dfbb24ae89111531d514
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.0.7"
   google_fonts:
     dependency: "direct main"
     description:
@@ -869,14 +853,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.0"
-  search_choices:
-    dependency: "direct main"
-    description:
-      name: search_choices
-      sha256: "44b0e00b45b72e69ee4e1350e2794134151d2a34ac668f2a7b6049b142d9b642"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.3.1"
   share_plus:
     dependency: "direct main"
     description:
@@ -1046,18 +1022,18 @@ packages:
     dependency: transitive
     description:
       name: syncfusion_flutter_core
-      sha256: "69fa2cccda6013770273fb726d03528c35d6ced00a28a7b21fae8c7d5c756a73"
+      sha256: "6898c5dc81f73ac4e1156a075e4dd4591ea8927f26dcc77f6ba0e9b1b1d6c8c5"
       url: "https://pub.dev"
     source: hosted
-    version: "29.2.5"
+    version: "29.2.7"
   syncfusion_flutter_datepicker:
     dependency: "direct main"
     description:
       name: syncfusion_flutter_datepicker
-      sha256: e5f45d7c2ab0e8e0f977cc9ce72aec2a8b3ef948fa76cba78c3d3465c7f834da
+      sha256: "6e3d6627379d5fdd6e145d5eb717ba9de2b57c48fd9c8b2db381b7d6be2b08c3"
       url: "https://pub.dev"
     source: hosted
-    version: "29.2.5"
+    version: "29.2.7"
   synchronized:
     dependency: transitive
     description:
@@ -1259,5 +1235,5 @@ packages:
     source: hosted
     version: "3.1.3"
 sdks:
-  dart: ">=3.7.0 <4.0.0"
+  dart: ">=3.8.0 <4.0.0"
   flutter: ">=3.29.0"
